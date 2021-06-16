@@ -15,6 +15,7 @@ namespace EmployeeApp.Tests.Validation
         [Fact]
         public void IsValid_ValidAccountNumber_ReturnsTrue()
         {
+            // Assert
             Assert.True(_validation.IsValid("123-4543234576-23"));
         }
 
@@ -23,6 +24,7 @@ namespace EmployeeApp.Tests.Validation
         [InlineData("12-4543234576-23")]
         public void IsValid_AccountNumberFirstPartWrong_ReturnsFalse(string accountNumber)
         {
+            // Assert
             Assert.False(_validation.IsValid(accountNumber));
         }
 
@@ -31,6 +33,7 @@ namespace EmployeeApp.Tests.Validation
         [InlineData("123-345456567633-23")]
         public void IsValid_AccountNumberMiddlePartWrong_ReturnsFalse(string accountNumber)
         {
+            // Assert
             Assert.False(_validation.IsValid(accountNumber));
         }
 
@@ -39,6 +42,7 @@ namespace EmployeeApp.Tests.Validation
         [InlineData("123-3454565676-233")]
         public void IsValid_AccountNumberLastPartWrong_ReturnsFalse(string accountNumber)
         {
+            // Assert
             Assert.False(_validation.IsValid(accountNumber));
         }
 
@@ -48,6 +52,7 @@ namespace EmployeeApp.Tests.Validation
         [InlineData("123+3454565676=23")]
         public void IsValid_InvalidDelimiters_ThrowsArgumentException(string accountNumber)
         {
+            // Assert
             Assert.Throws<ArgumentException>(() => _validation.IsValid(accountNumber));
         }
     }

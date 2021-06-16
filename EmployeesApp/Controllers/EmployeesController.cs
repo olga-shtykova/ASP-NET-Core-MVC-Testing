@@ -14,12 +14,14 @@ namespace EmployeesApp.Controllers
             _repo = repo;
         }
 
+        [HttpGet]
         public IActionResult Index()
         {
             var employees = _repo.GetAll();
             return View(employees);
         }
 
+        [HttpGet]
         public IActionResult Create()
         {
             return View();
